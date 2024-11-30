@@ -5,8 +5,9 @@
     padding: 20px 10px; /* Padding for content */
     text-align: center;
     width: 100%; /* Full width */
-    position: absolute; /* Allow for proper positioning */
+    position: relative; /* Allow for proper positioning */
     bottom: 0; /* Stick to bottom */
+    margin-top: 10%;
   }
   
   .footer-content {

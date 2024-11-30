@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
 import Dining from './pages/Dining';
+import Gallery from './pages/Gallery';
 // Import other pages
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/dining" element={<Dining />} />
+        <Route path="/gallery" element={<Gallery />} />
         {/* Add other routes */}
       </Routes>
       
