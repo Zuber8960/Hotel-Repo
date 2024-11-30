@@ -1,0 +1,55 @@
+/* Base Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: white;
+    position: relative; /* Needed for positioning the menu toggle button */
+  }
+  
+  .header-logo a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #ff7f50;
+    font-weight: bold;
+  }
+  
+  /* Navigation Links */
+  .header-nav {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .header-nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .header-nav a:hover {
+    color: #ff7f50;
+  }
+  
+  /* Hamburger Menu Toggle */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #ff7f50;
+    border-radius: 5px;
+  }
+  
+  .menu-toggle span {
+    width: 20px;
+    height: 2px;
+    background: white;
+    margin: 3px 0;
+    transition: all 0.3s ease-in-out;
+  }
+  

@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+/* General Page Layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body fills the viewport */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100%; /* Allow full height for layout */
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  flex: 1; /* Push footer to the bottom when content is short */
+  padding: 20px; /* Optional padding */
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Footer Specific Styling */
+.footer {
+  background-color: #343a40; /* Dark background */
+  color: white; /* White text */
+  text-align: center;
+  padding: 20px 10px;
+  width: 100%;
+}
+
+.footer a {
+  color: #ff7f50; /* Coral color for links */
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
