@@ -3,23 +3,23 @@ import { Link } from 'react-router-dom';
 import '../assets/styles/Header.css';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle menu
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setIsMenuOpen((prevState) => !prevState); // Toggle the menu state
   };
 
   return (
     <header className="header">
-      <div className="header-logo">
-        <Link to="/">Priya <span>Hotel</span></Link>
+      {/* Hotel Name at the Top */}
+      <div className="header-logo-container">
+        <Link to="/" className="header-logo">
+          Priya Hotel
+        </Link>
       </div>
-      <div className="menu-toggle" onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
+
+      {/* Navigation Links */}
+      <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`}>
         <Link to="/">Home</Link>
         <Link to="/rooms">Rooms</Link>
         <Link to="/dining">Dining</Link>
@@ -28,6 +28,13 @@ const Header = () => {
         <Link to="/reviews">Reviews</Link>
         <Link to="/contact-us">Contact Us</Link>
       </nav>
+
+      {/* Hamburger Menu Toggle */}
+      <div className="menu-toggle" onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
   );
 };

@@ -1,105 +1,85 @@
-/* General Header Styling */
+/* Base Header Styles */
 .header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack the logo and navigation vertically */
+    justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px;
     background-color: #343a40;
     color: white;
     position: relative;
   }
   
-  .header-logo a {
+  /* Logo Styles - Ensure logo appears at the top */
+  .header-logo-container {
+    margin-bottom: 20px; /* Space between logo and navbar */
+  }
+  
+  .header-logo {
     font-size: 2rem;
     text-decoration: none;
     color: #ff7f50;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-  }
-  
-  .header-logo span {
-    color: white;
-    font-size: 1.5rem;
-    margin-left: 5px;
-    font-weight: lighter;
+    letter-spacing: 2px;
   }
   
   /* Navigation Links */
   .header-nav {
     display: flex;
-    gap: 20px;
-    transition: transform 0.3s ease-in-out;
+    gap: 10px;
+    justify-content: center; /* Center the nav links */
+    width: 100%;
   }
   
+  /* Links */
   .header-nav a {
     text-decoration: none;
     color: white;
-    font-size: 1rem;
     transition: color 0.3s ease-in-out;
+    font-size: 1.1rem;
   }
   
+  /* Hover Effect */
   .header-nav a:hover {
     color: #ff7f50;
   }
-
   
-  /* Menu Toggle Button */
-.menu-toggle {
+  /* Hamburger Menu Toggle */
+  .menu-toggle {
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 25px;
     cursor: pointer;
     background-color: #ff7f50;
     border-radius: 5px;
   }
   
   .menu-toggle span {
-    width: 25px;
+    width: 20px;
     height: 3px;
     background: white;
     margin: 3px 0;
     transition: all 0.3s ease-in-out;
   }
   
-  /* Mobile Navigation (Hidden by Default) */
-  .header-nav {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .header-nav.open {
-    display: flex;
-  }
-  
+  /* Responsive Design */
   @media (max-width: 768px) {
-    .menu-toggle {
-      display: flex;
-    }
-  
     .header-nav {
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background-color: #343a40;
+      display: none; /* Initially hide the navbar in small screens */
       flex-direction: column;
-      gap: 15px;
-      width: 200px;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      transform: translateY(-20px);
-      visibility: hidden;
-      opacity: 0;
+      width: 100%;
+      text-align: center;
     }
   
     .header-nav.open {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0);
+      display: flex; /* Show navbar when the 'open' class is added */
+    }
+  
+    .menu-toggle {
+      display: flex;
     }
   }
   
