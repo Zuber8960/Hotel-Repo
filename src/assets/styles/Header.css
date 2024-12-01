@@ -1,4 +1,4 @@
-/* Base Header Styles */
+/* General Header Styling */
 .header {
     display: flex;
     justify-content: space-between;
@@ -6,50 +6,100 @@
     padding: 10px 20px;
     background-color: #343a40;
     color: white;
-    position: relative; /* Needed for positioning the menu toggle button */
+    position: relative;
   }
   
   .header-logo a {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-decoration: none;
     color: #ff7f50;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-logo span {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 5px;
+    font-weight: lighter;
   }
   
   /* Navigation Links */
   .header-nav {
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
   }
   
   .header-nav a {
     text-decoration: none;
     color: white;
+    font-size: 1rem;
     transition: color 0.3s ease-in-out;
   }
   
   .header-nav a:hover {
     color: #ff7f50;
   }
+
   
-  /* Hamburger Menu Toggle */
-  .menu-toggle {
+  /* Menu Toggle Button */
+.menu-toggle {
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
     background-color: #ff7f50;
     border-radius: 5px;
   }
   
   .menu-toggle span {
-    width: 20px;
-    height: 2px;
+    width: 25px;
+    height: 3px;
     background: white;
     margin: 3px 0;
     transition: all 0.3s ease-in-out;
+  }
+  
+  /* Mobile Navigation (Hidden by Default) */
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .header-nav.open {
+    display: flex;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .header-nav {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #343a40;
+      flex-direction: column;
+      gap: 15px;
+      width: 200px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-20px);
+      visibility: hidden;
+      opacity: 0;
+    }
+  
+    .header-nav.open {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   

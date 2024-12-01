@@ -62,6 +62,9 @@ const galleryStyles = {
     justifyContent: 'space-around',
     gap: '10px',
     marginBottom: "20%",
+    
   };
+
+ 
   
 export default Rooms;

@@ -7,6 +7,8 @@ import Rooms from './pages/Rooms';
 import Dining from './pages/Dining';
 import Gallery from './pages/Gallery';
 import ContactUs from './pages/ContactUs';
+import Attractions from './pages/Attractions';
+import Reviews from './pages/Reviews';
 // Import other pages
 
 const App = () => {
@@ -18,6 +20,8 @@ const App = () => {
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/dining" element={<Dining />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/attractions" element={<Attractions />} />
         <Route path="/contact-us" element={<ContactUs />} />
         {/* Add other routes */}
       </Routes>
@@ -26,5 +30,7 @@ const App = () => {
     </Router>
   );
 };
+
+
 
 export default App;
