@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import RoomCard from '../components/RoomCard';
-import axios from 'axios';
 
 const Rooms = () => {
   const [rooms, setRooms] = useState([]);
@@ -44,7 +43,7 @@ const Rooms = () => {
 
   return (
     <div>
-      <h1>Our Rooms</h1>
+      <h1 style={headingStyles}>Our Rooms</h1>
       <div style={galleryStyles}>
         {rooms.map(room => (
           <RoomCard key={room.id} {...room} />
@@ -57,14 +56,18 @@ const Rooms = () => {
 
 // Simple styling for gallery and images
 const galleryStyles = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    gap: '10px',
-    marginBottom: "20%",
-    
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', // Creates a responsive grid layout
+    gap: '20px',
+    margin: '20px',
   };
-
+  
+  const headingStyles = {
+    textAlign: 'center',
+    fontSize: '2rem',
+    color: '#333',
+    marginBottom: '30px',
+  };
  
   
 export default Rooms;
